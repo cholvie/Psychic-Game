@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Psychic</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css" media="screen">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    <h1>Psychic</h1>
+
+    <div id="game">
+        <p>Guess the answer, you get 10 tries.</p>
+      </div>
+
+      <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+      
+
+      alert("select a letter to start.")
+
+     
+        // choice options
+      var psychicChoice = [
+        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+        "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+      //variables for score keeping, each one starts at 0
+      var wins = 0;
+      var losses = 0;
+      var tries = 10;
+     // var selections = []  
+
+      //happens when the user makes a selection
+      document.onkeyup = function(event) {
+
+      //user letter guess
+      var guess = event.key;
+      ///var selection = [guess.join(", ")];
+
+    //CREATE an array of user selections to display  
+      //var selections = document.getElementById("guess").value;
+    //var selections = [j++];  
+
+      //computer "psychic" choice from the psychicChoice array 
+      
+      var computerGuess = psychicChoice[
+        Math.floor(Math.random() * psychicChoice.length)];
+        
+
+      //score keeper
+        //function insert ( ) {
+        //selections.push( guess.value );}
+
+      //both guesses match, the player gets a point and an additional try.
+        if (guess === computerGuess) { 
+            wins++; 
+            tries++; 
+            alert("A win and extra try for you");
+        
+      //If the guesses don't match, 
+          } else if (guess !== computerGuess) { 
+              losses++; tries--;
+          
+          } if (tries === 0) {     
+              alert("GAME 0VER"); 
+           
+           if (confirm("Select 'OK' to play again; select Cancel to quit.")) {
+              tries = 10; 
+              wins = 0; 
+              losses = 0;
+
+          } else  { 
+              alert("Thank You for playing");
+              tries = 10;
+              wins = 0; 
+              losses = 0; 
+              
+              
+          }
+           //if (tries === 0) { return;      
+       };
+          
+          //return ("alert1");
+          
+            
+
+         //for (i = 0; losses >= 5; i++) { break; }
+
+      var html =
+        "<p>You chose: " + guess + "</p>" +
+        "<p>The computer chose: " + computerGuess + "</p>" +
+        "<p>wins: " + wins + "</p>" +
+        "<p>losses: " + losses + "</p>" +
+        "<p>tries: " + tries + "</p>";
+
+      document.querySelector("#game").innerHTML = html;
+        
+             
+          }
+
+  
+      
+     
+
+     // for(i=0; i<5; i++) {
+     //  if(answer == guess) {
+     //     alert("Your guess is correct!");
+     //      break;}
+     //     else {
+    //      guess = prompt("Please try again."); } }
+      
+    // <! Include all compiled plugins (below), or include individual files as needed -->
+    
+     // <script src="js/bootstrap.min.js">
+    </script>
+  </body>
+</html>
+
+   
