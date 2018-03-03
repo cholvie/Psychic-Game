@@ -32,40 +32,32 @@
         "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
         "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-      //variables for score keeping, each one starts at 0
+//variables for score keeping, each one starts at 0
       var wins = 0;
       var losses = 0;
       var tries = 10;
-     // var selections = []  
 
-      //happens when the user makes a selection
+//happens when the user makes a selection
       document.onkeyup = function(event) {
 
-      //user letter guess
+//user letter guess
       var guess = event.key;
-      ///var selection = [guess.join(", ")];
 
-    //CREATE an array of user selections to display  
-      //var selections = document.getElementById("guess").value;
-    //var selections = [j++];  
-
-      //computer "psychic" choice from the psychicChoice array 
+//CREATE an array of user selections to display 
+      //var selection = event.key.toLowerCase();
+      //document.getElementById("guessSoFar").value += " "+event.key;
       
+//computer "psychic" choice from the psychicChoice array 
       var computerGuess = psychicChoice[
         Math.floor(Math.random() * psychicChoice.length)];
-        
 
-      //score keeper
-        //function insert ( ) {
-        //selections.push( guess.value );}
-
-      //both guesses match, the player gets a point and an additional try.
+//both guesses match, the player gets a point and an additional try.
         if (guess === computerGuess) { 
             wins++; 
             tries++; 
             alert("A win and extra try for you");
         
-      //If the guesses don't match, 
+//If the guesses don't match, 
           } else if (guess !== computerGuess) { 
               losses++; tries--;
           
@@ -82,17 +74,9 @@
               tries = 10;
               wins = 0; 
               losses = 0; 
-              
-              
+                         
           }
-           //if (tries === 0) { return;      
        };
-          
-          //return ("alert1");
-          
-            
-
-         //for (i = 0; losses >= 5; i++) { break; }
 
       var html =
         "<p>You chose: " + guess + "</p>" +
@@ -102,24 +86,9 @@
         "<p>tries: " + tries + "</p>";
 
       document.querySelector("#game").innerHTML = html;
-        
-             
+               
           }
-
-  
-      
-     
-
-     // for(i=0; i<5; i++) {
-     //  if(answer == guess) {
-     //     alert("Your guess is correct!");
-     //      break;}
-     //     else {
-    //      guess = prompt("Please try again."); } }
-      
-    // <! Include all compiled plugins (below), or include individual files as needed -->
-    
-     // <script src="js/bootstrap.min.js">
+          
     </script>
   </body>
 </html>
